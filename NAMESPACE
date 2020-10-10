@@ -3,5 +3,8 @@
 export(classic_ci)
 export(diff_conf)
 export(expect_2xR)
+export(myl)
+export(myy)
 export(print_confidenceInts)
+export(shinyKnots)
 export(wilson_ci)
