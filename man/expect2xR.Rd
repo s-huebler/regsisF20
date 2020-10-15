@@ -16,6 +16,7 @@ A dataframe
 Calculates the expected values for a multinomial 2xR data frame
 }
 \examples{
-
+d<-data.frame("a"=c(10,15), "b"=c(22,34), "c"=c(24,18))
+expect2xR(d)
 
 }
