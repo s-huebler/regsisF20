@@ -10,7 +10,7 @@
 #' @examples
 #'
 #'
-expect_2xR<-function(df){
+expect2xR<-function(df){
   cols<-names(df)
   ret=data.frame(matrix(NA, nrow=2, ncol=length(cols)),row.names=row.names(df))
   colnames(ret)<-cols
