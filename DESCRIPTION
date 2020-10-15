@@ -11,3 +11,5 @@ LazyData: true
 RoxygenNote: 7.1.1
 URL: https://github.com/s-huebler/regsisF20
 BugReports: https://github.com/s-huebler/regsisF20/issues
+Imports: 
+    shiny

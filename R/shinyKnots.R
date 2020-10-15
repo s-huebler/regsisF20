@@ -5,7 +5,6 @@
 #'
 #' @examples
 #' \dontrun{ shinyKnots()}
-#'
 shinyKnots<-function(){
   shiny::runApp(system.file("Knots", package="regsisF20"),launch.browser = TRUE)
 }
