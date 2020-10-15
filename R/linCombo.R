@@ -18,8 +18,8 @@
 #' Checks=c(644,589,1081,891,537,563,402,495,823,555)
 #' )
 #'
-#' lm1<-lm(Hours~Mail+Gifts+Charge+Returns+Checks, data=clerical)
-#' design<-model.matrix(lm1)
+#' lm1<-stats::lm(Hours~Mail+Gifts+Charge+Returns+Checks, data=clerical)
+#' design<-stats::model.matrix(lm1)
 #' a1<-matrix(c(0,1,-1,0,0,0), nrow=6)
 #'
 #' coeff<-lm1$coefficients
@@ -32,7 +32,7 @@ linCombo<-function(Y,X,a,l, alpha=0.95){
   kplus1 = dim(X)[2]
   df = n-(kplus1)
 
-  tval=qt(alpha,df)
+  tval=stats::qt(alpha,df)
 
   betaHat= solve(t(X) %*% X) %*% t(X) %*% Y
   SSE=t(Y) %*% Y-t(betaHat) %*% t(X) %*% Y
@@ -42,7 +42,7 @@ linCombo<-function(Y,X,a,l, alpha=0.95){
   b2<-l+tval*s*sqrt(t(a) %*% solve(t(X) %*% X) %*% a)
   Int=c("Lower"=min(b1,b2), "Upper"=max(b1,b2))
 
-  fig<-pairs(X[,-1])
+  fig<-graphics::pairs(X[,-1])
   print(fig)
 
   Int}

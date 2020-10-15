@@ -23,8 +23,8 @@
 #' Checks=c(644,589,1081,891,537,563,402,495,823,555)
 #' )
 #'
-#' lm1<-lm(Hours~Mail+Gifts+Charge+Returns+Checks, data=clerical)
-#' design<-model.matrix(lm1)
+#' lm1<-stats::lm(Hours~Mail+Gifts+Charge+Returns+Checks, data=clerical)
+#' design<-stats::model.matrix(lm1)
 #' a1<-matrix(c(0,1,-1,0,0,0), nrow=6)
 #'
 #' coeff<-lm1$coefficients
@@ -42,13 +42,13 @@ linComboParam<-function(df,ind, dep, a, alpha=0.95){
     paste(Yname, paste(vars, collapse="+"), sep="~")
   )
 
-  X=model.matrix(f, data=df)
+  X=stats::model.matrix(f, data=df)
 
   n = dim(X)[1]
   kplus1 = dim(X)[2]
   dfree = n-(kplus1)
 
-  tval=qt(alpha,dfree)
+  tval=stats::qt(alpha,dfree)
 
   betaHat= solve(t(X) %*% X) %*% t(X) %*% Y
   SSE=t(Y) %*% Y-t(betaHat) %*% t(X) %*% Y
@@ -81,7 +81,7 @@ linComboParam<-function(df,ind, dep, a, alpha=0.95){
     labs(title="Estimates and Confidence Intervals", caption = "Estimates based off parameters \n as described by the rows \n of the design matrix")
 
 
-  pairPlot<-pairs(X[,-1])
+  pairPlot<-graphics::pairs(X[,-1])
 
   for (s in vars){
     plotVars<-ggplot(data=as.data.frame(df))+
