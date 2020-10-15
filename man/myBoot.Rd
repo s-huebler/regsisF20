@@ -14,7 +14,7 @@ myBoot(data, iter, alpha = 0.2)
 \item{alpha}{, alpha level}
 }
 \value{
-, histograms for each beta estimate, confidence intervals for each beta estimate, summary statistics 
+, histograms for each beta estimate, confidence intervals for each beta estimate, summary statistics
 the iter length list of beta estimates
 }
 \description{

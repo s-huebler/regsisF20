@@ -84,7 +84,7 @@ linComboParam<-function(df,ind, dep, a, alpha=0.95){
   pairPlot<-graphics::pairs(X[,-1])
 
   for (s in vars){
-    plotVars<-ggplot(data=as.data.frame(df))+
+    plotVars<-ggplot2::ggplot(data=as.data.frame(df))+
       geom_point(aes(x=unlist(df[,s]), y=Y))+
       ggtitle(paste(Yname, "vs", s, sep=" "))+
       xlab(as.character(s))+
