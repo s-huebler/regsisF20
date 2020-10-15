@@ -30,9 +30,9 @@
 #' coeff<-lm1$coefficients
 #' l1<-coeff[2]-coeff[3]
 #'
-#' myy(clerical, 1, c(2,3,4,5,6), a1 )
+#' linComboParam(clerical, 1, c(2,3,4,5,6), a1 )
 #'
-myy<-function(df,ind, dep, a, alpha=0.95){
+linComboParam<-function(df,ind, dep, a, alpha=0.95){
   Y=as.matrix(df[ind],ncol=1)
   vars=names(df[dep])
 

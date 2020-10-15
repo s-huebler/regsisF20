@@ -8,9 +8,9 @@
 #' @export
 #'
 #' @examples
-#' print_confidenceInts(c(2,3))
+#' printConfidenceInts(c(2,3))
 #'
-print_confidenceInts<-function(ci){
+printConfidenceInts<-function(ci){
   if (is.character(ci)){
     cat(ci)
   } else {

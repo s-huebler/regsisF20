@@ -25,9 +25,9 @@
 #' coeff<-lm1$coefficients
 #' l1<-coeff[2]-coeff[3]
 #'
-#' myl(clerical$Hours, design, a1, l1 )
+#' linCombo(clerical$Hours, design, a1, l1 )
 #'
-myl<-function(Y,X,a,l, alpha=0.95){
+linCombo<-function(Y,X,a,l, alpha=0.95){
   n = dim(X)[1]
   kplus1 = dim(X)[2]
   df = n-(kplus1)

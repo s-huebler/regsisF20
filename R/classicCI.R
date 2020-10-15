@@ -1,6 +1,7 @@
-#' Wilson Confidence Intervals for Binomial Estimate
+
+#' Classic Confidence Intervals for Binomial Estimate
 #'
-#' Calculates the alpha% confidence interval for a binomial estimate using the Wilson correction.
+#' Calculates the alpha% confidence interval for a binomial estimate.
 #'
 #' @param x , number of successes
 #' @param n , number of trials
@@ -10,9 +11,9 @@
 #' @export
 #'
 #' @examples
-#'  x=5; n=15; wilson_ci(x,n)
+#' x=5; n=15; classicCI(x,n)
 #'
-wilson_ci<- function(x,n,alpha=0.05){
+classicCI<- function(x,n,alpha=0.05){
   z<-stats::qnorm(alpha/2)
   if (n==0){
     return ("Not Enough Samples")
@@ -23,7 +24,8 @@ wilson_ci<- function(x,n,alpha=0.05){
   {
     return ("Discriminant Less Than Zero")
   }
-  Ci<- c((x+z^2/(2*n)-z*(sqrt(discrim)))/(1+z^2/n),(x+z^2/(2*n)+z*(sqrt(discrim)))/(1+z^2/n))
+
+  Ci<- c(x-z*sqrt(x*(1-x)/n),x+z*sqrt(x*(1-x)/n))
   Ci<-c(min(Ci), max(Ci))
 
   class(Ci)<-"confidenceInts"

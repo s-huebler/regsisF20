@@ -12,9 +12,9 @@
 #' @export
 #'
 #' @examples
-#' tab=c("x"=1, "y"=2, "z"=3); a=1; b=3; diff_conf(tab, a, b)
+#' tab=c("x"=1, "y"=2, "z"=3); a=1; b=3; diffConf(tab, a, b)
 #'
-diff_conf<-function(tab, a, b, FWER=0.05, ntest = (length(tab)*(length(tab)-1))/2){
+diffConf<-function(tab, a, b, FWER=0.05, ntest = (length(tab)*(length(tab)-1))/2){
   alpha=FWER/ntest
   p1<-tab[a]/sum(tab)
   p2<-tab[b]/sum(tab)

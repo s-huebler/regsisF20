@@ -8,7 +8,8 @@
 #' @export
 #'
 #' @examples
-#'
+#'d<-data.frame("a"=c(10,15), "b"=c(22,34), "c"=c(24,18))
+#'expect2xR(d)
 #'
 expect2xR<-function(df){
   cols<-names(df)
