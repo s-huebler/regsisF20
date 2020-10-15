@@ -32,8 +32,8 @@ Returns=c(235,388,398,457,577,345,326,161,219,287),
 Checks=c(644,589,1081,891,537,563,402,495,823,555)
 )
 
-lm1<-lm(Hours~Mail+Gifts+Charge+Returns+Checks, data=clerical)
-design<-model.matrix(lm1)
+lm1<-stats::lm(Hours~Mail+Gifts+Charge+Returns+Checks, data=clerical)
+design<-stats::model.matrix(lm1)
 a1<-matrix(c(0,1,-1,0,0,0), nrow=6)
 
 coeff<-lm1$coefficients

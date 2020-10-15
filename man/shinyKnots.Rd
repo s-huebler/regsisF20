@@ -14,5 +14,4 @@ Open the app that displays piecewise regression with 2 knots for spruce data
 }
 \examples{
 \dontrun{ shinyKnots()}
-
 }

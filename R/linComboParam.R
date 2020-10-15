@@ -38,7 +38,7 @@ linComboParam<-function(df,ind, dep, a, alpha=0.95){
 
   Yname<-names(df[ind])
 
-  f<-as.formula(
+  f<-stats::as.formula(
     paste(Yname, paste(vars, collapse="+"), sep="~")
   )
 
@@ -73,7 +73,7 @@ linComboParam<-function(df,ind, dep, a, alpha=0.95){
     cis[i,2:4]<-c(est, min(int1,int2), max(int1,int2))
   }
 
-  pointsPlot<-ggplot(cis, aes(x = Row, y = Estimate))+
+  pointsPlot<-ggplot2::ggplot(cis, aes(x = Row, y = Estimate))+
     geom_point(size=1, show.legend = FALSE)+
     geom_errorbar(aes(ymin=Lower, ymax=Upper),width=.2)+
     xlab("Row of Design Matrix")+
