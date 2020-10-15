@@ -2,7 +2,8 @@
 
 export(classic_ci)
 export(diff_conf)
-export(expect_2xR)
+export(expect2xR)
+export(myBoot)
 export(myl)
 export(myy)
 export(print_confidenceInts)
